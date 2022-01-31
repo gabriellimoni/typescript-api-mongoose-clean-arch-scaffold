@@ -1,0 +1,63 @@
+{
+  "name": "@scaffold/api",
+  "version": "0.0.0",
+  "description": "Typescript scaffold backend API application",
+  "main": "dist/index.js",
+  "author": "Gabriel Limoni (gabrielblimoni@gmail.com)",
+  "scripts": {
+    "compile": "rm -rf dist && tsc --project tsconfig.prod.json",
+    "lint:fix": "prettier --write .",
+    "start": "PARSE_MODULES=true node -r dotenv/config dist/index.js --port=$PORT",
+    "dev": "RUNNING_LOCALLY=true ts-node-dev -r dotenv/config -r tsconfig-paths/register src/index.ts --port=$PORT",
+    "test": "jest --forceExit --runInBand --detectOpenHandles",
+    "test:coverage": "yarn test --coverage",
+    "precommit": "yarn lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/prompt-cli": "^16.1.0",
+    "@types/chance": "^1.1.3",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^27.0.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^17.0.13",
+    "@types/supertest": "^2.0.11",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.3.2",
+    "prettier": "^2.3.0",
+    "supertest": "^6.1.3",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.0.3",
+    "winston": "^3.3.3"
+  }
+}
