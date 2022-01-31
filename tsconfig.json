@@ -16,11 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": false,
-    "typeRoots": [
-      "./@types",
-      "./node_modules/@types",
-      "../../node_modules/@types"
-    ]
+    "typeRoots": ["./@types"]
   },
   "include": ["src", "scripts"],
   "exclude": ["jest.config.ts", "node_modules"]
